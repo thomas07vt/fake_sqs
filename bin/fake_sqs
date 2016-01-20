@@ -28,6 +28,10 @@ parser = OptionParser.new do |o|
     options[:host] = host
   end
 
+  o.on "-n", "--hostname HOST", "Hostname for bound address" do |host|
+    options[:hostname] = host
+  end
+
   o.on "-s", "--server SERVER", ['thin', 'mongrel', 'webrick'], "Server to use: thin, mongrel or webrick (by default Sinatra chooses the best available)" do |server|
     options[:server] = server
   end

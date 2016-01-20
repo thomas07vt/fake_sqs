@@ -41,7 +41,7 @@ module FakeSQS
     app.set :port, options[:port] if options[:port]
     app.set :bind, options[:host] if options[:host]
     app.set :server, options[:server] if options[:server]
-    server = FakeSQS.server(port: options[:port], host: options[:host])
+    server = FakeSQS.server(options)
     app.set :api, FakeSQS.api(server: server, database: options[:database])
     app
   end
